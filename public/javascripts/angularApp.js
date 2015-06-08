@@ -52,15 +52,15 @@ app.controller('MainCtrl', ['$scope','posts', function($scope, posts){
     posts.downvote(post);
   };
   $scope.setOrder = function (order) {
-    if(order === $scope.order){
-      if(order[0] === '-'){
+    if (order === $scope.order){
+      if (order[0] === '-'){
         $scope.order = order.substr(1,order.length);
       }
-      else{
+      else {
         $scope.order = '-'.concat(order);
       }
     }
-    else{
+    else {
       $scope.order = order;
     }
   };
