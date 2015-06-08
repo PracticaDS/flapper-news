@@ -1,4 +1,6 @@
+/* jshint -W117, -W098 */
 var app = angular.module('flapperNews', ['ui.router','angularMoment']);
+/* jshint +W117 */
 
 app.config([
 '$stateProvider',
@@ -70,7 +72,9 @@ app.factory('posts', [ '$http', function($http){
   };
   o.getAll = function() {
     return $http.get('/posts').success(function(data){
+      /* jshint -W117 */
       angular.copy(data, o.posts);
+      /* jshint +W117 */
     });
   };
   o.create = function(post) {
@@ -80,7 +84,7 @@ app.factory('posts', [ '$http', function($http){
   };
   o.upvote = function(post) {
     return $http.put('/posts/' + post._id + '/upvote')
-      .success(function(data){
+      .success(function(data) {
         post.upvotes += 1;
       });
   };

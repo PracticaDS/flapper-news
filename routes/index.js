@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
@@ -74,9 +74,9 @@ router.post('/posts/:post/comments', function(req, res, next) {
     if(err) { return next(err); }
 
     req.post.comments.push(comment);
+    /*jshint unused:false*/
     req.post.save(function(err, post) {
-      if(err){ return next(err); }
-
+      if(err) { return next(err); }
       res.json(comment);
     });
   });
