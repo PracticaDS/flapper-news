@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/PracticaDS/flapper-news.svg)](https://travis-ci.org/PracticaDS/flapper-news)
+
 # flapper-news
 
 Ejemplo de aplicacion MEAN.
