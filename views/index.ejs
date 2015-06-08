@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Flapper News</title>  
+
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/javascripts/lib/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  <!-- bower:js-->
+  <script src="/javascripts/lib/jquery/dist/jquery.js"></script>
+  <script src="/javascripts/lib/angular/angular.js"></script>
+  <script src="/javascripts/lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/javascripts/lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/javascripts/lib/moment/moment.js"></script>
+  <script src="/javascripts/lib/angular-moment/angular-moment.js"></script>
+  <!-- endbower-->
+
+  <script src="/javascripts/angularApp.js"></script>
+  <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+</head> 
+<body ng-app="flapperNews">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div ui-view></div>
+    </div>
+  </div>
+
+
+</body>
+</html>
