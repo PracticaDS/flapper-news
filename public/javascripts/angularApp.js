@@ -78,7 +78,7 @@ app.factory('posts', [ '$http', function($http){
     });
   };
   o.create = function(post) {
-    return $http.post('/posts', post).success(function(data){
+    return $http.post('/posts', post).success(function(){
       o.posts.push();
     });
   };
@@ -104,7 +104,7 @@ app.factory('posts', [ '$http', function($http){
   };
   o.upvoteComment = function(post, comment) {
     return $http.put('/posts/' + post._id + '/comments/'+ comment._id + '/upvote')
-      .success(function(data){
+      .success(function(){
         comment.upvotes += 1;
       });
   };
