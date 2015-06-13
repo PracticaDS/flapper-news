@@ -74,7 +74,7 @@ router.post('/posts/:post/comments', function(req, res, next) {
     if(err) { return next(err); }
 
     req.post.comments.push(comment);
-    /*jshint unused:false*/
+    /* jshint unused:false */
     req.post.save(function(err, post) {
       if(err) { return next(err); }
       res.json(comment);
