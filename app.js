@@ -8,7 +8,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/Posts');
 require('./models/Comments');
-mongoose.connect('mongodb://localhost/news');
+
+// parametrized connection string
+
+var connectionString = process.env.MONGO_CONNSTR_URI
+mongoose.connect(connectionString || 'mongodb://localhost/news');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
