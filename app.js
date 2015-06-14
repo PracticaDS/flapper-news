@@ -11,7 +11,7 @@ require('./models/Comments');
 
 // parametrized connection string
 
-var connectionString = process.env.MONGO_CONNSTR_URI
+var connectionString = process.env.MONGO_CONNSTR_URI;
 mongoose.connect(connectionString || 'mongodb://localhost/news');
 
 var routes = require('./routes/index');
