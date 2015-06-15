@@ -65,6 +65,33 @@ module.exports = function(grunt) {
                 }
             }
         }
+    },
+
+    mongoimport: {
+        options: {
+        db : 'news',
+        host : 'localhost',
+        port: '27017',
+        stopOnError : true,
+        collections : [
+          { 
+            name : 'posts', 
+            type : 'json', 
+            file : 'data/posts.json', 
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          },
+          { 
+            name : 'comments', 
+            type : 'json', 
+            file : 'data/comments.json', 
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          }
+        ]
+      }
     }
 
   });
@@ -76,4 +103,6 @@ module.exports = function(grunt) {
 
   // TASKS
   grunt.registerTask('default', 'jshint');
+
+  grunt.loadNpmTasks('grunt-mongoimport');
 };

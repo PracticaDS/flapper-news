@@ -79,7 +79,7 @@ app.factory('posts', [ '$http', function($http){
   };
   o.create = function(post) {
     return $http.post('/posts', post).success(function(){
-      o.posts.push();
+      o.posts.push(post);
     });
   };
   o.upvote = function(post) {
