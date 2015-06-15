@@ -5,5 +5,5 @@ deploy:
   app: pdes-flapper-news
   provider: heroku
   api_key:
-    secure: $HEROKU_TOKEN
+    secure: "$HEROKU_TOKEN"
 before_deploy: "grunt mongoimport"
