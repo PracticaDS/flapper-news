@@ -69,9 +69,11 @@ module.exports = function(grunt) {
 
     mongoimport: {
         options: {
-        db : 'news',
-        host : 'localhost',
-        port: '27017',
+        db : 'heroku_9jjsr8g7',
+        host : 'ds043972.mongolab.com',
+        username: "heroku_9jjsr8g7",
+        password: process.env.MONGOLAB_PASSWD,
+        port: '43972',
         stopOnError : true,
         collections : [
           { 
